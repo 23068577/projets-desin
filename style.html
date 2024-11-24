@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Réservation de Salles</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet"> <!-- Lien vers le fichier CSS -->
+
+</head>
+
+<body>
+
+
+
+<!-- En-tête -->
+
+<header class="bg-success text-white text-center py-3">
+
+    <h1>Application de Gestion des Réservations de Salles</h1>
+
+</header>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Réservation de Salles</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet"> <!-- Pour les styles personnalisés -->
+
+</head>
+
+<!-- Formulaire de recherche de salle -->
+
+<div class="container mt-4">
+
+    <h2>Rechercher une Salle</h2>
+
+    <form action="recherche.php" method="POST">
+
+        <div class="mb-3">
+
+            <label for="date" class="form-label">Date et Heure</label>
+
+            <input type="datetime-local" class="form-control" id="date" name="date" required>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Rechercher</button>
+
+    </form>
+
+</div>
+
+
+
+<!-- Liste des réservations existantes -->
+
+<div class="container mt-5">
+
+    <h2>Réservations</h2>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Salle</th>
+
+                <th>Date et Heure</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>1</td>
+
+                <td>Salle A</td>
+
+                <td>2024-12-01 10:00</td>
+
+                <td>
+
+                    <button class="btn btn-warning" onclick="modifierReservation(1)">Modifier</button>
+
+                    <button class="btn btn-danger" onclick="annulerReservation(1)">Annuler</button>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>2</td>
+
+                <td>Salle B</td>
+
+                <td>2024-12-01 14:00</td>
+
+                <td>
+
+                    <button class="btn btn-warning" onclick="modifierReservation(2)">Modifier</button>
+
+                    <button class="btn btn-danger" onclick="annulerReservation(2)">Annuler</button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
+<!-- Formulaire pour réserver une salle -->
+
+<div class="container mt-5">
+
+    <h2>Réserver une Salle</h2>
+
+    <form action="reserver.php" method="POST">
+
+        <div class="mb-3">
+
+            <label for="salle" class="form-label">Choisir une Salle</label>
+
+            <select class="form-select" id="salle" name="salle" required>
+
+                <option value="Salle A">Salle A</option>
+
+                <option value="Salle B">Salle B</option>
+
+                <option value="Salle C">Salle C</option>
+
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="date_reservation" class="form-label">Date et Heure</label>
+
+            <input type="datetime-local" class="form-control" id="date_reservation" name="date_reservation" required>
+
+        </div>
+
+        <button type="submit" class="btn btn-success">Réserver</button>
+
+    </form>
+
+</div>
+
+
+
+<!-- Footer -->
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+
+    <p>&copy; 2024 - Application de Gestion des Réservations de Salles</p>
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    // Fonction pour modifier une réservation
+
+    function modifierReservation(id) {
+
+        alert('Modification de la réservation ID: ' + id);
+
+        // Logique pour modifier la réservation
+
+    }
+
+
+
+    // Fonction pour annuler une réservation
+
+    function annulerReservation(id) {
+
+        if (confirm('Êtes-vous sûr de vouloir annuler cette réservation ?')) {
+
+            alert('Réservation ID ' + id + ' annulée');
+
+            // Logique pour annuler la réservation
+
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>
+
